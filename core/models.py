@@ -6,6 +6,7 @@ class Todo(db.Model):
     date = db.Column(db.Date())
     time = db.Column(db.Time())
     category= db.Column(db.String, db.ForeignKey('category.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return '<ToDo {}>'.format(self.title)
